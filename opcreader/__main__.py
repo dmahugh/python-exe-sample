@@ -5,7 +5,6 @@ Command line usage: opcinfo filename
 """
 import sys
 
-import opc
 from opcreader import get_content_types
 from opcreader import viewer
 
