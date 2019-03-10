@@ -20,6 +20,16 @@ To verify that the EXE is working correctly go into the ```dist```folder and try
 
 For command syntax, see the output of ```opcinfo -h```.
 
+## Making changes
+
+Since the ```opcreader``` package was installed with the ```--editable``` option, you can make changes to the source code and see them reflected immediately. Your changes won't be reflected in the .EXE file until you rebuild it, but you can run ```cli.py``` to run the latest version from source code. For example, use ```python cli.py -h``` to see the help screen.
+
+## Running tests
+
+Use ```pytest``` to run the tests, as shown here:
+
+![tests](tests.png)
+
 ## Contributing
 This project is a work in progress, and pull requests, feature requests and issues are welcome. Feel free to [log an issue](https://github.com/dmahugh/azure-key-vault/issues) if you have a suggestion. Thanks!
 
