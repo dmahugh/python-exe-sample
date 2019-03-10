@@ -10,7 +10,7 @@ CURRENT_FOLDER = os.path.dirname(__file__)
 
 def test_get_content_types_docx():
     """Test reading content types from a DOCX file"""
-    filename = os.path.join(CURRENT_FOLDER, "testdocs/simpletest.docx")
+    filename = os.path.join(CURRENT_FOLDER, "testdata.docx")
     expected = {
         "/word/document.xml": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
         "/word/styles.xml": "application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml",
@@ -22,5 +22,49 @@ def test_get_content_types_docx():
         "/docProps/app.xml": "application/vnd.openxmlformats-officedocument.extended-properties+xml",
         "/docProps/custom.xml": "application/vnd.openxmlformats-officedocument.custom-properties+xml",
     }
+    assert get_content_types(filename) == expected
 
+
+def test_get_content_types_xlsx():
+    """Test reading content types from an XLSX file"""
+    filename = os.path.join(CURRENT_FOLDER, "testdata.xlsx")
+    expected = {
+        "/xl/workbook.xml": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml",
+        "/xl/worksheets/sheet1.xml": "application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml",
+        "/xl/theme/theme1.xml": "application/vnd.openxmlformats-officedocument.theme+xml",
+        "/xl/styles.xml": "application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml",
+        "/xl/sharedStrings.xml": "application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml",
+        "/docProps/core.xml": "application/vnd.openxmlformats-package.core-properties+xml",
+        "/docProps/app.xml": "application/vnd.openxmlformats-officedocument.extended-properties+xml",
+        "/docProps/custom.xml": "application/vnd.openxmlformats-officedocument.custom-properties+xml",
+    }
+    assert get_content_types(filename) == expected
+
+
+def test_get_content_types_pptx():
+    """Test reading content types from a PPTX file"""
+    filename = os.path.join(CURRENT_FOLDER, "testdata.pptx")
+    expected = {
+        "/ppt/presentation.xml": "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml",
+        "/ppt/slideMasters/slideMaster1.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideMaster+xml",
+        "/ppt/slides/slide1.xml": "application/vnd.openxmlformats-officedocument.presentationml.slide+xml",
+        "/ppt/presProps.xml": "application/vnd.openxmlformats-officedocument.presentationml.presProps+xml",
+        "/ppt/viewProps.xml": "application/vnd.openxmlformats-officedocument.presentationml.viewProps+xml",
+        "/ppt/theme/theme1.xml": "application/vnd.openxmlformats-officedocument.theme+xml",
+        "/ppt/tableStyles.xml": "application/vnd.openxmlformats-officedocument.presentationml.tableStyles+xml",
+        "/ppt/slideLayouts/slideLayout1.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout2.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout3.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout4.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout5.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout6.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout7.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout8.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout9.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout10.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/ppt/slideLayouts/slideLayout11.xml": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+        "/docProps/core.xml": "application/vnd.openxmlformats-package.core-properties+xml",
+        "/docProps/app.xml": "application/vnd.openxmlformats-officedocument.extended-properties+xml",
+        "/docProps/custom.xml": "application/vnd.openxmlformats-officedocument.custom-properties+xml",
+    }
     assert get_content_types(filename) == expected
