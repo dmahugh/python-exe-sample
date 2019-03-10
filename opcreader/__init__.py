@@ -3,7 +3,7 @@ See https://github.com/dmahugh/python-exe-sample
 """
 import importlib_resources as _resources
 
-from .opc import get_content_types
+from .opc import get_content_types, get_relationships
 
 __version__ = "0.5.0"
 
@@ -14,5 +14,6 @@ config_file = _resources.path("reader", "config.json")
 
 __all__ = [
     "get_content_types",
+    "get_relationships",
     "viewer"
 ]

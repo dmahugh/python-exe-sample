@@ -13,7 +13,7 @@ See https://github.com/dmahugh/python-exe-sample for more information
 import pprint
 import sys
 
-from opcreader import get_content_types
+from opcreader import get_content_types, get_relationships
 from opcreader import viewer
 
 
@@ -54,7 +54,8 @@ def main():
         viewer.show(f"Content types:\n{pprint.pformat(content_types)}")
 
     if "-r" in options or "--relationships" in options:
-        viewer.show(f"/// relationships for {filename}")
+        relationships = get_relationships(filename)
+        viewer.show(f"Relationships:\n{pprint.pformat(relationships)}")
 
     if "-s" in options or "--structure" in options:
         viewer.show(f"/// structure for {filename}")

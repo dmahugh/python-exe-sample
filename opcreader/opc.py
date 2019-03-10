@@ -20,3 +20,20 @@ def get_content_types(fname):
             content_types[key] = value
 
     return content_types
+
+def get_relationships(fname):
+    """Return package relationships as a dictionary.
+    keys = Relationship Id
+    values = Relationship Type
+    """
+    tree = ET.fromstring(zipfile.ZipFile(fname).read("_rels/.rels"))
+
+    relationships = dict()
+    for elem in tree.iter():
+        if "Id" in elem.attrib and "Type" in elem.attrib:
+            key = elem.attrib["Id"]
+            value = elem.attrib["Type"]
+            relationships[key] = value
+
+    return relationships
+
