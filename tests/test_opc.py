@@ -3,9 +3,9 @@ import os.path
 
 import pytest
 
-# For readability, expected test results are stored in a separate constants.py
+# For readability, expected test results are stored in a separate testdata.py
 # file, because they're long and messy.
-import constants
+import testdata
 
 from opcreader import get_content_types, get_parts, get_relationships
 
@@ -15,9 +15,9 @@ CURRENT_FOLDER = os.path.dirname(__file__)
 @pytest.mark.parametrize(
     "filetype,expected",
     [
-        ("docx", constants.DOCX_CONTENT_TYPES),
-        ("pptx", constants.PPTX_CONTENT_TYPES),
-        ("xlsx", constants.XLSX_CONTENT_TYPES),
+        ("docx", testdata.DOCX_CONTENT_TYPES),
+        ("pptx", testdata.PPTX_CONTENT_TYPES),
+        ("xlsx", testdata.XLSX_CONTENT_TYPES),
     ],
 )
 def test_get_content_types(filetype, expected):
@@ -30,9 +30,9 @@ def test_get_content_types(filetype, expected):
 @pytest.mark.parametrize(
     "filetype,expected",
     [
-        ("docx", constants.DOCX_PARTS),
-        ("pptx", constants.PPTX_PARTS),
-        ("xlsx", constants.XLSX_PARTS),
+        ("docx", testdata.DOCX_PARTS),
+        ("pptx", testdata.PPTX_PARTS),
+        ("xlsx", testdata.XLSX_PARTS),
     ],
 )
 def test_get_parts(filetype, expected):
@@ -45,9 +45,9 @@ def test_get_parts(filetype, expected):
 @pytest.mark.parametrize(
     "filetype,expected",
     [
-        ("docx", constants.DOCX_RELATIONSHIPS),
-        ("pptx", constants.PPTX_RELATIONSHIPS),
-        ("xlsx", constants.XLSX_RELATIONSHIPS),
+        ("docx", testdata.DOCX_RELATIONSHIPS),
+        ("pptx", testdata.PPTX_RELATIONSHIPS),
+        ("xlsx", testdata.XLSX_RELATIONSHIPS),
     ],
 )
 def test_get_relationships(filetype, expected):
