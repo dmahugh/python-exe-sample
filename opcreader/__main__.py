@@ -1,4 +1,8 @@
-"""Command line too for reading metadata and structure of OPC package
+"""
+--------------------------------------------------------------
+OPCINFO: command line tool for viewing information about the
+contents of OPC packages such as DOCX, XLSX, and PPTX files.
+--------------------------------------------------------------
 
 Usage: opcinfo <options> filename
 
@@ -7,8 +11,6 @@ Options:
   -p, --parts            Show part names.
   -r, --relationships    Show package relationships.
   -h, --help             Show help screen only (this message).
-
-See https://github.com/dmahugh/python-exe-sample for more information
 """
 import sys
 
