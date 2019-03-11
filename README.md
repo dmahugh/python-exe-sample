@@ -1,8 +1,10 @@
 # creating an executable from Python code
 
-This repo provides a simple example of how to create a single-file Windows executable from a Python app using [PyInstaller](http://www.pyinstaller.org/).
+This repo provides an example of how to create a single-file Windows executable from a Python app using [PyInstaller](http://www.pyinstaller.org/).
 
 The general approach is largely based on Luke Lee's excellent Real Python article [Using PyInstaller to Easily Distribute Python Applications](https://realpython.com/pyinstaller-python/). That article targets Linux platforms, and in this sample I've tweaked a few things to make it work on Windows. Note that PyInstaller doesn't support cross-platform builds, so you need to build the executable on the same platform you're deploying to.
+
+For more information about this sample, see the blog post [Building a Python EXE for Windows](https://www.dougmahugh.com/building-a-python-exe-for-windows).
 
 ## Installation
 * Install Python (version 3.6 or higher).
